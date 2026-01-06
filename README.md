@@ -1,8 +1,7 @@
 # ASTRA: Autonomous Service & Transaction Routing Agent
 
-<div align="center">
-  <img src=""![WhatsApp Image 2026-01-06 at 1 22 34 PM](https://github.com/user-attachments/assets/a72ae039-62f2-4b3a-be6f-7ef7093f3276)""
- alt="ASTRA Logo" width="300px">!
+
+<img width="1024" height="559" alt="ccb23444-866e-4abc-8715-fdb2ddfbfca9" src="https://github.com/user-attachments/assets/1f29f374-400e-45a2-b4d5-de591fd16980" />
 
 </div>
 
@@ -189,3 +188,4 @@ This project is licensed under the MIT License - see the [LICENSE](https://www.g
 ```
 
 ```
+
