@@ -1,7 +1,12 @@
-```markdown
 # ASTRA: Autonomous Service & Transaction Routing Agent
 
-![ASTRA Logo](https://i.postimg.cc/J0GgZ5kM/image-10.png)
+<div align="center">
+  <img src=""![WhatsApp Image 2026-01-06 at 1 22 34 PM](https://github.com/user-attachments/assets/a72ae039-62f2-4b3a-be6f-7ef7093f3276)""
+ alt="ASTRA Logo" width="300px">!
+
+</div>
+
+<br>
 
 > **Submission for:** [Weilliptic Problem Statement 1: Multi-Step Agentic Workflows on Icarus]
 > **Track:** The Payment Protocol for the AI Economy
@@ -13,29 +18,37 @@
 
 **ASTRA (Autonomous Service & Transaction Routing Agent)** is a decentralized, agentic workflow engine built on the **Weilliptic Icarus** ecosystem. It bridges the critical "trust gap" in the AI economy by automating the verification and settlement of digital work.
 
-Current automation tools (Zapier, Make) operate as opaque "black boxes"—when a payment is triggered, there is no immutable proof of *why* or *if* the conditions were truly met. ASTRA solves this by acting as a transparent, on-chain adjudicator. It orchestrates complex, multi-step workflows that verify external events (e.g., GitHub PR merges, Jira tickets, IoT sensor data) and executes financial transactions only when strict Service Level Agreement (SLA) policies are cryptographically proven, directly addressing the challenge to develop sophisticated multi-step workflows with the Weil-SDK that integrate multiple external services.
+Current automation tools (Zapier, Make) operate as opaque "black boxes"—when a payment is triggered, there is no immutable proof of *why* or *if* the conditions were truly met. ASTRA solves this by acting as a transparent, on-chain adjudicator. It orchestrates complex, multi-step workflows that verify external events (e.g., GitHub PR merges, Jira tickets, IoT sensor data) and executes financial transactions only when strict Service Level Agreement (SLA) policies are cryptographically proven.
 
 ---
 
 ## 🚀 Key Features
 
-* **Trustless Verification:** Connects to external "source of truth" APIs (GitHub, Linear, Slack) to verify work completion in real-time, fulfilling the requirement to chain multiple external services using Weilliptic's SDK.
+* **Trustless Verification:** Connects to external "source of truth" APIs (GitHub, Linear, Slack) to verify work completion in real-time.
 * **On-Chain Auditability:** Every decision—whether to approve or deny a payout—is hashed and recorded on the blockchain, creating an immutable audit trail for policy enforcement.
-* **Natural Language Control:** Powered by **Icarus LLM**, allowing users to define complex logic in plain English (e.g., *"Pay 500 USDC if the 'Release' branch passes CI/CD"*), meeting the requirement to execute multi-step workflows via natural language.
-* **Resilient Workflows:** Built with **Weil-SDK**, featuring built-in error recovery, conditional branching, and "Human-in-the-Loop" escalation for ambiguous cases, as required to handle data flow, error recovery, and conditional branching.
-* **Model Context Protocol (MCP) Integration:** Detailed context injection to prevent AI hallucinations and ensure accurate data interpretation, consistent with the overview's focus on Model Context Protocol (MCP).
+* **Natural Language Control:** Powered by **Icarus LLM**, allowing users to define complex logic in plain English (e.g., *"Pay 500 USDC if the 'Release' branch passes CI/CD"*).
+* **Resilient Workflows:** Built with **Weil-SDK**, featuring built-in error recovery, conditional branching, and "Human-in-the-Loop" escalation for ambiguous cases.
+* **Model Context Protocol (MCP) Integration:** Detailed context injection to prevent AI hallucinations and ensure accurate data interpretation.
 
 ---
 
-## 🏗️ Architecture Diagram
+## 🏗️ Architecture 
 
-Below is the detailed technical architecture of ASTRA, showing the data flow from natural language input to on-chain finality.
+[Image of software architecture diagram]
 
-![ASTRA Technical Architecture Diagram](https://i.postimg.cc/vHWQ1WzC/image-7.png)
 
-### High-Level Data Flow Chart
+The ASTRA architecture consists of three core layers:
 
-![ASTRA High-Level Flow](https://i.postimg.cc/sxjX1ZgL/image-3.png)
+1.  **Input Layer (Icarus Engine):**
+    * Captures user intent via Natural Language.
+    * Parses context using the Model Context Protocol (MCP).
+2.  **Orchestration Layer (Weil-SDK):**
+    * **Fetcher Nodes:** Retrieve data from external APIs (GitHub, Jira).
+    * **Logic Core:** Executes conditional branching (`IF status == 'success'`).
+    * **Executor Nodes:** Trigger payments or notifications.
+3.  **Settlement & Trust Layer:**
+    * **Smart Contracts:** Store decision hashes on-chain (Polygon/Base).
+    * **Icarus Dashboard:** Visualizes the live workflow state.
 
 ---
 
@@ -101,13 +114,14 @@ npm run start:agent
 ### Step 2: Trigger a Workflow
 
 You can trigger the workflow via the CLI or the Icarus Dashboard.
+
 **Example Command:**
 
 > "Monitor the repository `astra-core` for PR #42. If the CI checks pass, release the milestone payment of 0.5 ETH to the contributor."
 
 ### Step 3: View Execution
 
-1. Open the **Icarus Dashboard** to see the workflow visualization.
+1. Open the **Icarus Dashboard**.
 2. Watch the agent verify the GitHub status in real-time.
 3. Observe the conditional logic branch to "Approved."
 4. Click the **Transaction Hash** link to verify the audit log on Etherscan.
@@ -146,15 +160,13 @@ auditWorkflow.addStep('adjudicate', async (ctx) => {
 
 ## 🏆 Challenge Requirements Checklist
 
-ASTRA is engineered to meet every requirement of Weilliptic Problem Statement 1:
-
 | Requirement | Status | Implementation Detail |
 | --- | --- | --- |
-| **1. Chain multiple external services using Weilliptic's SDK** | ✅ | Chains GitHub API -> Logic -> Payment/Slack. |
-| **2. Execute multi-step workflows via natural language** | ✅ | Parses intent via Icarus LLM & MCP. |
-| **3. Deploy & visualize workflows on Icarus** | ✅ | Fully visualizable DAG on Icarus UI. |
-| **4. Maintain on-chain auditability & policy enforcement** | ✅ | Hashes decision logic to Smart Contract. |
-| **5. Handle data flow, error recovery & conditional branching** | ✅ | Implements retries & human-escalation branches. |
+| **Chain External Services** | ✅ | Chains GitHub API -> Logic -> Payment/Slack. |
+| **Natural Language Exec** | ✅ | Parses intent via Icarus LLM & MCP. |
+| **Deploy on Icarus** | ✅ | Fully visualizable DAG on Icarus UI. |
+| **On-Chain Auditability** | ✅ | Hashes decision logic to Smart Contract. |
+| **Error Recovery** | ✅ | Implements retries & human-escalation branches. |
 
 ---
 
