@@ -1,6 +1,7 @@
 # ASTRA: Autonomous Service & Transaction Routing Agent
 
-![Uploading ccb23444-866e-4abc-8715-fdb2ddfbfca9.png…]()
+<img width="1024" height="559" alt="ccb23444-866e-4abc-8715-fdb2ddfbfca9" src="https://github.com/user-attachments/assets/896554a2-2234-4f50-a4ee-89071f40d57d" />
+
 
 <br>
 
