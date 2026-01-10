@@ -7,7 +7,7 @@
 
 > **Submission for:** [Weilliptic Problem Statement 1: Multi-Step Agentic Workflows on Icarus]
 > **Track:** The Payment Protocol for the AI Economy
-> **Team:** [Your Team Name]
+> **Team:** BYTEFORGE TITANS
 
 ---
 
